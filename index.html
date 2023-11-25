@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+font-family: 'Permanent Marker';
+height:auto;
+width:100%;
+        }
+
+        header {
+            background-color: black;#333;
+            color: white;
+            padding: 5px;
+            display: flex;
+            justify-content: center;;
+            align-items: center;
+gap:25rem;
+position:fixed;
+z-index:2;
+width:100%;
+top:0;
+        }
+
+        .company-logo img {
+            height: 180px;
+width:200px; 
+position:absolute;;
+top:1%;
+left:5%;
+z-index:1;
+border-radius:50%;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+font-size:20px;
+padding:5px 10px;
+border-radius:0 10px 0 10px;
+font-weight:bold;
+transition:all ease 0.3s;
+        }
+nav a:hover{
+color:white;
+text-decoration:underline;
+backgroundwhite;
+transition:all ease 0.5s;
+scale:1.2;
+}
+h1{
+font-family: 'Pacifico';
+}
+
+
+                             /* section content */
+
+
+section{
+width:100%;
+height:auto;
+margin-top:100px;
+position:relative;
+}
+.company-info{
+position:absolute;
+background:black;
+width:450px;
+right:0;
+top:2%;
+color:white;
+display:flex;
+padding:0px 10px;
+border-radius:20px 0 0 20px;
+}
+ #typewriter-text {
+      font-family: 'Courier New', monospace;
+      font-size: 26px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 1px solid #000;
+      padding-right: 5px;
+position:absolute;
+left:53%;
+ border-right: 2px solid transparent;
+      animation: blink 1s infinite;
+font-weight:bold;
+    }
+ @keyframes blink {
+      0% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: white;
+      }
+      100% {
+        border-color: transparent;
+      }
+    }
+.hidden{
+opacity:0;
+transition:all 1s;
+filter:blur(8px);
+transform:translateY(100%);
+position:absolute;
+background:transparent;
+width:400px;
+top:15%;
+right:0;
+z-index:1;
+padding:10px;
+font-weight:bold;
+color:white;
+}
+
+.shows{
+opacity:1;
+filter:blur(0);
+transform:translateX(-0);
+color:black;
+}  
+.hiddentwo{
+opacity:0;
+transition:all 2s;
+filter:blur(8px);
+transform:translateY(100%);
+position:absolute;
+background:transparent;
+width:400px;
+top:42%;
+right:0;
+z-index:1;
+padding:10px;
+font-weight:bold;
+color:white;
+}
+
+.showstwo{
+opacity:1;
+filter:blur(0);
+transform:translateX(-0);
+color:black;
+}
+section video{
+width:750px;
+height:750px;
+}
+
+
+@media(max-width:768px){
+header nav{
+display:none;
+}
+.company-logo img{
+display:none;
+}
+header h1{
+font-size:24px;
+
+}
+header{
+justify-content:left;
+gap:0;
+padding:10px;
+}
+.company-info{
+width:100%;
+padding:0px;
+border-radius:0;
+}
+.company-info h2{
+font-size:18px;
+}
+#typewriter-text{
+font-size:18px;
+left:57%;
+}
+.hidden{
+width:100%;
+top:10%;
+padding:10px;
+
+}
+.hiddentwo{
+top:38%;
+}
+section video{
+width:100%;
+height:100%;
+position:absolute;
+top:25%;
+}
+}
+    </style>
+</head>
+<body>
+
+    <header>
+<h1>Sewak Global Solution</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+<section style="height:100vh;background:white;">
+<div class="company-logo">
+<img src="company-logo.png" alt="Logo">
+</div>
+<div class="company-info">
+<p><h2>Sewak.info@SGL</h2> Provide<h2 id="typewriter-text"></h2></p>
+</div>
+<div class="hidden">
+<h3>Discover the convenience of our user-friendly booking website, where seamless navigation meets a plethora of options. Whether you’re planning a getaway or scheduling an event, our platform provides a one-stop solution</h3>
+</div>
+<div class="hiddentwo">
+<h3>Discover the convenience of our user-friendly booking website, where seamless navigation meets a plethora of options. Whether you’re planning a getaway or scheduling an event, our platform provides a one-stop solution</h3>
+</div>
+
+<video  autoplay muted loop>
+  <source src="loop.MOV" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+</section>
+</body>
+<script>
+  // List of words to display
+  const words = ["BOOKING", "RENTING", "MT EXPEDITION"];
+
+  // Index to keep track of the current word
+  let wordIndex = 0;
+
+  // Function to display words one by one with typewriter effect
+  function typeWriter() {
+    const textElement = document.getElementById('typewriter-text');
+    const currentWord = words[wordIndex];
+
+    if (currentWord !== undefined) {
+      // Check if all characters are displayed
+      if (textElement.innerHTML === currentWord) {
+        // Pause before moving to the next word
+        setTimeout(() => {
+          textElement.innerHTML = '';
+          wordIndex = (wordIndex + 1) % words.length;
+          typeWriter();
+        }, 1500);
+      } else {
+        // Display the next character
+        textElement.innerHTML += currentWord.charAt(textElement.innerHTML.length);
+        // Call the function recursively after a short delay
+        setTimeout(typeWriter, 120);
+      }
+    }
+  }
+
+  // Start the typewriter effect when the page loads
+  window.onload = typeWriter;
+</script>
+<script defer>
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+console.log(entry)
+if (entry.isIntersecting) {
+entry.target.classList.add('shows');
+} 
+});
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+</script>
+<script defer>
+const observerr = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+console.log(entry)
+if (entry.isIntersecting) {
+entry.target.classList.add('showstwo');
+} 
+});
+});
+
+const hiddenElementss = document.querySelectorAll('.hiddentwo');
+hiddenElementss.forEach((el) => observerr.observe(el));
+
+
+</script>
+</html>
