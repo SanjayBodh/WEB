@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Search</title>
+<link rel="icon" type="image" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+.section{
+backgroundgreen;
+position:relative;
+top:90px;
+}
+header{
+position:fixed;
+background:black;
+width:100%;
+top:0;
+
+}
+header h1{
+font-family: 'Pacifico';
+color:white;
+font-weight:bold;
+}
+    body {
+      font-family: 'Playfair Display', serif;
+padding:0;
+margin:0;
+
+    }
+span{
+position:fixed;
+z-index:10;
+color:white;
+top:3%;
+right:1.5%;
+displaynone;
+}
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index:10000;
+  top: 0;
+  left: 0;
+  background:white;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top 30px;
+z-index:1000;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: black;#818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+::placeholder{
+font-size:15px;
+}
+    button {
+      padding: 10px 15px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #hotelList {
+      margin-top: 20px;
+    }
+
+    .hotel-item {
+      display: flex;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+gap:4rem;
+    }
+
+    .hotel-item img {
+      max-width: 500px; /* Adjust the width as needed */
+      height: auto;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+
+    .hotel-info {
+      flex: 1;
+    }
+
+    .editable-div {
+      display: none;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    .editable-div textarea {
+      width: 100%;
+      height: 100px;
+      box-sizing: border-box;
+    }
+@media(max-width:768px){
+ .hotel-item {
+      display: flex;
+flex-direction:column;
+      border: 1px solid #ddd;
+      padding 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+gap:4rem;
+    }
+.hotel-item img {
+      max-width: 100%; /* Adjust the width as needed */
+      height: auto;
+      margin-left: 10px;
+      border-radius: 4px;
+    }
+span{
+position:fixed;
+z-index:10;
+color:white;;
+top:3%;
+right:1.5%;
+display:block;
+}
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index:10000;
+  top: 0;
+  left: 0;
+  background:white;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 22px;
+  color: black;#818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+header h1{
+font-size:24px;
+padding:15px;
+}
+.section{
+position:relative;
+top:65px;
+}
+}
+  </style>
+</head>
+<body>
+ <header>
+
+<h1>Sewak Global Solution</h1>
+</header>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="index1.html">Home</a>
+    <a href="#first">About</a>
+    <a href="#second">What Sewak.Com Provide</a>
+    <a href="#fourth">Places To Travell</a>
+  </div>
+</div>
+
+
+<span style="font-size:35px;cursor:pointer;z-index:1000;" onclick="openNav()">&#9776;</span>
+<div class="section">
+  <form id="hotelSearchForm" onsubmit="searchHotels(event)">
+    
+    <input type="text" id="place" name="place" placeholder="Place" list="n" required>
+<datalist id="n">
+<option value="Kullu">Kullu</option>
+<option value="Manali">Manali</option>
+</datalist>
+
+    
+    <input type="text" id="state" name="state" placeholder="State" list="s" required>
+<datalist id="s">
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+</datalist>
+
+    <button type="submit">Search</button>
+  </form>
+
+  <div id="hotelList"></div>
+</section>
+  <script>
+    function searchHotels(event) {
+      event.preventDefault();
+
+      var place = document.getElementById('place').value;
+      var state = document.getElementById('state').value;
+      var hotelListContainer = document.getElementById('hotelList');
+
+      // Clear previous results
+      hotelListContainer.innerHTML = '';
+
+      // Simulate fetching hotel data based on place and state
+      var hotels = getHotels(place, state);
+
+      // Display hotels
+      if (hotels.length > 0) {
+        hotels.forEach(function (hotel) {
+          var hotelItem = document.createElement('div');
+          hotelItem.classList.add('hotel-item');
+
+          // Image
+          var image = document.createElement('img');
+          image.src = hotel.image;
+          image.addEventListener('click', function () {
+            showEditableDiv(hotel.description);
+          });
+          hotelItem.appendChild(image);
+
+          // Hotel Information
+          var hotelInfo = document.createElement('div');
+          hotelInfo.classList.add('hotel-info');
+          hotelInfo.innerHTML = `<h3>${hotel.name}</h3>
+                                <p><strong>Description:</strong> ${hotel.description}</p>
+                                <p><strong>Contact Info:</strong> ${hotel.contact}</p>
+                                <p><strong>Charges:</strong> ${hotel.charges}</p>`;
+          hotelItem.appendChild(hotelInfo);
+
+          hotelListContainer.appendChild(hotelItem);
+        });
+      } else {
+        hotelListContainer.textContent = 'No hotels found.';
+      }
+    }
+
+    function showEditableDiv(initialDescription) {
+      var editableDiv = document.createElement('div');
+      editableDiv.classList.add('editable-div');
+
+      var textarea = document.createElement('textarea');
+      textarea.value = initialDescription;
+      editableDiv.appendChild(textarea);
+
+      document.body.appendChild(editableDiv);
+
+      // You can add further functionality here, like saving changes to a server or updating the original data.
+
+      // Close the editable div when clicking outside of it
+      document.addEventListener('click', function (event) {
+        if (!editableDiv.contains(event.target)) {
+          editableDiv.style.display = 'none';
+        }
+      });
+    }
+
+    function getHotels(place, state) {
+      // Simulate fetching hotel data based on place and state
+      if (state === 'Himachal Pradesh') {
+        if (place === 'Kullu') {
+          return [
+            {
+              name: 'Hotel A',
+              image: 'a.jpeg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            },
+            {
+              name: 'Hotel b',
+              image: 'hotel_a.jpg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            },
+            {
+              name: 'Hotel c',
+              image: 'a.jpeg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            }, 
+            {
+              name: 'Hotel d',
+              image: 'hotel_a.jpg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            },
+          ];
+        } else if (place === 'Manali') {
+          return [
+            {
+              name: 'Hotel X',
+              image: 'hotel_x.jpg', // Replace with the actual image path
+              description: 'A cozy hotel in Manali.',
+              contact: '987-654-3210',
+              charges: '$120 per night'
+            },
+            {
+              name: 'Hotel b',
+              image: 'hotel_a.jpg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            },
+            {
+              name: 'Hotel c',
+              image: 'a.jpeg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            }, 
+            {
+              name: 'Hotel d',
+              image: 'hotel_a.jpg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            },
+          ];
+        }
+           else if (place === 'bhuntar') {
+          return [
+            {
+              name: 'Hotel X',
+              image: 'hotel_x.jpg', // Replace with the actual image path
+              description: 'A cozy hotel in Manali.',
+              contact: '987-654-3210',
+              charges: '$120 per night'
+            },
+            {
+              name: 'Hotel b',
+              image: 'hotel_a.jpg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            },
+            {
+              name: 'Hotel c',
+              image: 'a.jpeg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            }, 
+            {
+              name: 'Hotel d',
+              image: 'hotel_a.jpg', // Replace with the actual image path
+              description: 'A beautiful hotel in Kullu.',
+              contact: '123-456-7890',
+              charges: '$100 per night'
+            },
+          ];
+        }
+      }
+
+
+
+      // Add more conditions for other states and places as needed
+
+      // Default case: no hotels found
+      return [];
+    }
+  </script>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+</body>
+</html>
