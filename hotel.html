@@ -10,9 +10,68 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&family=Playfair+Display&display=swap" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <style>
+.hidden{
+opacity:0;
+transition:all 1s;
+filter:blur(8px);
+transform:translateY(100%);
+}
+
+.shows{
+opacity:1;
+filter:blur(0);
+transform:translateX(-0);
+}  
+.sub{
+display:flex;
+justify-content:center;
+gap:2rem;
+background:orange;
+padding:20px;
+}
+.sub input[type="email"]{
+border:none;
+background:transparent;
+color:orange;
+border-radius:0 0 5px 5px;
+border-bottom:1px solid black;
+width:200px;
+}
+#email::placeholder{
+color:white;
+}
+.subs{
+background:orange;
+padding:20px;
+text-align:center;
+}
+.sectiontwo h1{
+font-size:25px;
+}
+.sectiontwo h2{
+font-size:17px;
+}
+.material-symbols-outlined{
+position:relative;
+color:black;
+left:1px;
+top:5px;
+}
+.first img{
+width:320px;
+border-radius:10px;
+height:500px;
+}
+.first{
+display:flex;
+padding:10px;
+justify-content:center;;
+gap:4rem;
+}
 .section{
-backgroundgreen;
+background:white;
 position:relative;
 top:90px;
 }
@@ -154,6 +213,17 @@ gap:4rem;
       box-sizing: border-box;
     }
 @media(max-width:768px){
+input, select {
+      width: 100%;
+      padding: 7px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+font-size:17px;
+    }
+::placeholder{
+font-size:17px;
+text-align:center;
+}
  .hotel-item {
       display: flex;
 flex-direction:column;
@@ -223,7 +293,23 @@ padding:15px;
 }
 .section{
 position:relative;
-top:65px;
+top:100px;
+}
+.first img{
+width:100%;
+height:300px;
+}
+.first{
+display:grid;
+padding:10px;
+justify-content:center;;
+gap:2rem;
+}
+.sectiontwo h1{
+font-size:25px;
+}
+.sectiontwo h2{
+font-size:17px;
 }
 }
   </style>
@@ -231,7 +317,7 @@ top:65px;
 <body>
  <header>
 
-<h1>Sewak Global Solution</h1>
+<h1 class="hidden">Sewak Global Solution</h1>
 </header>
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -265,6 +351,212 @@ top:65px;
 
   <div id="hotelList"></div>
 </section>
+<div class="sectiontwo">
+<div class="first">
+<img src="images/img.jpeg"><div class="first-content">
+<h1>Hotel one</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2><br>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+<div class="first">
+<img src="images/img4.jpeg"><div class="first-content">
+<h1>Hotel two</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+<div class="first">
+<img src="images/img5.jpeg"><div class="first-content">
+<h1>Hotel three</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+<div class="subs">
+<h2>Subscribe for best deals</h2>
+<div class="sub">
+<div><input type="email" id="email" placeholder="example@email.com" name="email"></div><div><button type="button" value="submit">submit</button></div>
+</div>
+</div>
+<div class="first">
+<img src="images/img4.jpeg"><div class="first-content">
+<h1>Hotel four</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+<div class="first">
+<img src="images/img.jpeg"><div class="first-content">
+<h1>Hotel five</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+<div class="first">
+<img src="images/img4.jpeg"><div class="first-content">
+<h1>Hotel two</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+<div class="first">
+<img src="images/img5.jpeg"><div class="first-content">
+<h1>Hotel three</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+<div class="first">
+<img src="images/img4.jpeg"><div class="first-content">
+<h1>Hotel four</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+<div class="first">
+<img src="images/img.jpeg"><div class="first-content">
+<h1>Hotel five</h1>
+<h2>Discover unparalleled comfort and convenience with our hotel booking service. Browse a diverse range of accommodations tailored to suit every traveler’s preferences</h2>
+<h2>contact-form</h2>
+<a href="tel:8219345102">8219345102</a><br>
+<a href="mailto:mohitboy112@gmail.com">sanjaybodh123@gmail.com</a>
+<h2>Charges per night@1200</h2>
+<h2>we provide <br>free wifi <span class="material-symbols-outlined">
+wifi
+</span><br>swiming pool <span class="material-symbols-outlined">
+light_mode
+</span><br>garden area <span class="material-symbols-outlined">
+home_and_garden
+</span><br>we also rent bikes <span class="material-symbols-outlined">
+directions_bike
+</span> and car <span class="material-symbols-outlined">
+no_crash
+</span> with day charges</h2>
+<button type="button" value="Book">Book</button>. <a href="#">Learn. more</a>
+</div>
+</div>
+</div>
   <script>
     function searchHotels(event) {
       event.preventDefault();
@@ -336,10 +628,11 @@ top:65px;
           return [
             {
               name: 'Hotel A',
-              image: 'a.jpeg', // Replace with the actual image path
+              image: 'images/img.jpeg', // Replace with the actual image path
               description: 'A beautiful hotel in Kullu.',
               contact: '123-456-7890',
               charges: '$100 per night'
+what we provide:
             },
             {
               name: 'Hotel b',
@@ -446,5 +739,21 @@ function closeNav() {
   document.getElementById("myNav").style.height = "0%";
 }
 </script>
+<script defer>
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+console.log(entry)
+if (entry.isIntersecting) {
+entry.target.classList.add('shows');
+} 
+});
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+</script>
+
 </body>
 </html>
