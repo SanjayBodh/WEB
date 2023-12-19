@@ -10,6 +10,7 @@
     text-align: center;
 animation:delay 2s ease;
 transition:all 1s;
+    z-index:10000000;
 }
 
 @keyframes delay{
