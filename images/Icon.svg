@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<path d="M0 0L512 0L512 512L0 512L0 0Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
+<g id="Layer-1" vectornator:layerName="Layer 1">
+<path d="M0 0L512 0L512 512L0 512L0 0Z" fill="#e4872b" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="Rectangle 1"/>
+<g opacity="1" vectornator:layerName="Microsoft Groove">
+<path d="M274.176 165.121C209.021 152.653 152.653 209.021 165.121 274.176C172.091 310.585 201.461 339.932 237.871 346.879C302.991 359.301 359.301 302.991 346.879 237.871C339.944 201.461 310.585 172.091 274.176 165.121ZM256 290.731C236.817 290.731 221.269 275.183 221.269 256C221.269 236.817 236.817 221.269 256 221.269C275.183 221.269 290.731 236.817 290.731 256C290.731 275.183 275.183 290.731 256 290.731Z" fill="#f1d244" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<path d="M418.181 90.8673L346.3 144.862L374.084 181.896L410.528 154.563C429.792 183.714 441.23 218.445 441.23 256C441.23 358.305 358.305 441.23 256 441.23C153.695 441.23 70.7698 358.305 70.7698 256C70.7698 153.695 153.695 70.7698 256 70.7698C286.343 70.7698 314.892 78.2022 340.164 91.1336L380.637 61.0684C344.633 38.0072 301.937 24.4623 256 24.4623C128.122 24.4623 24.4623 128.122 24.4623 256C24.4623 383.878 128.122 487.538 256 487.538C383.878 487.538 487.538 383.878 487.538 256C487.538 191.308 460.946 132.88 418.181 90.8673Z" fill="#f1d244" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+</g>
+</g>
+</svg>
